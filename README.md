@@ -3,7 +3,7 @@
 <p>RingRoost ClickToCall is a html button that allows website visitors to call you directly from their browser. The button can be installed on any website, and is currently compatible with all major browsers (Chrome, Firefox, IE, Safari, Opera). </p>
 
 
-<p>You can see a working example at:<a href="http://www.ringroost.com/click2call.php"> http://www.ringroost.com/click2call.php</a></p>
+<p>You can see a working example at:<a target="_blank" href="http://www.ringroost.com/click2call.php"> http://www.ringroost.com/click2call.php</a></p>
 
 <h1>Installation </h1>
 
@@ -33,7 +33,7 @@ Add the following div tag in your html wherever you want the button to show up.
 <table>
 <tr> <td> notsupported_text </td> <td> What to display in case that a browser is not compatible with the button. You may embed html in the attribute. </td> </tr>
 <tr> <td> class</td> <td> (rr_grey| rr_red|rr_blue|rr_green|rr_black|rr_yellow|rr_purple|rr_gblue|rr_button1)
-You can set a class on the div in order to change it’s appearance. Button styles corrispond (roughly) to these buttons: http://www.joepettersson.com/demo/css3-buttons/
+You can set a class on the div in order to change it’s appearance. Button styles corrispond (roughly) to these buttons: <a target="_blank"  href="http://www.joepettersson.com/demo/css3-buttons/"> http://www.joepettersson.com/demo/css3-buttons </a>
  </td> </tr>
 </table>
 
