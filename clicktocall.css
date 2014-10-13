@@ -1,0 +1,299 @@
+    #ringroost_c2c{
+        height:35px;
+        display:inline-block;
+    
+    }
+    #rr_c2c_controls,
+    #rr_call_icon{
+        margin:0px;
+        padding:0px;
+        display:block;
+       float:left;
+       background: #80a9da;
+        background: -webkit-gradient(linear,left top,left bottom,color-stop(#80a9da,0),color-stop(#6f97c5,1));
+        background: -webkit-linear-gradient(top, #80a9da 0%, #6f97c5 100%);
+        background: -moz-linear-gradient(top, #80a9da 0%, #6f97c5 100%);
+        background: -o-linear-gradient(top, #80a9da 0%, #6f97c5 100%);
+        background: linear-gradient(top, #80a9da 0%, #6f97c5 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80a9da', endColorstr='#6f97c5',GradientType=0 );
+
+        display:inline-block;
+        border-bottom: 1px solid #555;
+        height:35px;
+        line-height:35px;
+        border: 1px solid #5d81ab;
+        -webkit-box-shadow: 0px 1px 1px rgba(255,255,255,0.8) inset;
+        -moz-box-shadow: 0px 1px 1px rgba(255,255,255,0.8) inset;
+        box-shadow: 0px 1px 1px rgba(255,255,255,0.8) inset;
+    }
+
+    #rr_c2c_controls{
+     -webkit-border-top-left-radius: 18px;
+        -webkit-border-bottom-left-radius: 18px;
+        -moz-border-radius-topleft: 18px;
+        -moz-border-radius-bottomleft: 18px;
+        border-top-left-radius: 18px;
+        border-bottom-left-radius: 18px;
+        border-right: 0px;
+        -webkit-box-shadow: 0px 1px 1px rgba(255,255,255,0.8) inset;
+        -moz-box-shadow: 0px 1px 1px rgba(255,255,255,0.8) inset;
+        box-shadow: 0px 1px 1px rgba(255,255,255,0.8) inset;
+    }
+
+    #ringroost_c2c a{
+        color:#fff;
+        text-shadow: 0px 1px 1px #000;
+        font-family: 'PT Sans', sans-serif;
+        text-decoration:none;
+        font-size:16px;
+        padding-left:30px;
+        padding-right:10px;
+    }
+    #rr_call_icon{
+        display:inline-block;
+        width:50px;
+        -webkit-border-top-right-radius: 18px;
+        -webkit-border-bottom-right-radius: 18px;
+        -moz-border-radius-topright: 18px;
+        -moz-border-radius-bottomright: 18px;
+        border-top-right-radius: 18px;
+        border-bottom-right-radius: 18px;
+        color:#fff;
+        font-size:20px;
+        color:#fff;
+        text-shadow: 0px 1px 1px #000;
+        text-align:center;
+
+        }
+    #rr_phone_status{
+        display:none;
+        float:left;
+        line-height:35px;
+        height:35px;
+        background:#dfdfdf;
+        color:#000;
+        padding-left:10px;
+        padding-right:10px;
+        border: 1px solid #5d81ab;
+        border-right:0px;
+    }
+
+/*start or button1 style*/
+#ringroost_c2c.rr_button1 #rr_c2c_controls,
+#ringroost_c2c.rr_button1 #rr_call_icon{
+background-color: #3bb3e0;
+font-family: 'Open Sans', sans-serif;
+text-decoration: none;
+color: #fff;
+position: relative;
+background-image: linear-gradient(bottom, rgb(44,160,202) 0%, rgb(62,184,229) 100%);
+background-image: -o-linear-gradient(bottom, rgb(44,160,202) 0%, rgb(62,184,229) 100%);
+background-image: -moz-linear-gradient(bottom, rgb(44,160,202) 0%, rgb(62,184,229) 100%);
+background-image: -webkit-linear-gradient(bottom, rgb(44,160,202) 0%, rgb(62,184,229) 100%);
+background-image: -ms-linear-gradient(bottom, rgb(44,160,202) 0%, rgb(62,184,229) 100%);
+background-image: -webkit-gradient( linear, left bottom, left top, color-stop(0, rgb(44,160,202)), color-stop(1, rgb(62,184,229)) );
+-webkit-box-shadow: inset 0px 1px 0px #2ab7ec, 0px 5px 0px 0px #156785, 0px 10px 5px #999;
+-moz-box-shadow: inset 0px 1px 0px #2ab7ec, 0px 5px 0px 0px #156785, 0px 10px 5px #999;
+-o-box-shadow: inset 0px 1px 0px #2ab7ec, 0px 5px 0px 0px #156785, 0px 10px 5px #999;
+box-shadow: inset 0px 1px 0px #2ab7ec, 0px 5px 0px 0px #156785, 0px 10px 5px #999;
+}
+
+#ringroost_c2c.rr_button1 #rr_c2c_controls{
+-webkit-border-top-left-radius: 5px;
+-webkit-border-bottom-left-radius: 5px;
+-moz-border-radius-topleft: 5px;
+-moz-border-radius-bottomleft: 5px;
+border-top-left-radius: 5px;
+border-bottom-left-radius: 5px;
+}
+
+#ringroost_c2c.rr_button1 #rr_call_icon{
+-webkit-border-top-right-radius: 5px;
+-webkit-border-bottom-right-radius: 5px;
+-moz-border-radius-topright: 5px;
+-moz-border-radius-bottomright: 5px;
+border-top-right-radius: 5px;
+border-bottom-right-radius: 5px;
+}
+
+#ringroost_c2c.rr_button1 #rr_phone_status{
+height:40px;
+line-height:40px;
+}
+
+/*end button1 styling */
+
+
+/*grey styling */
+#ringroost_c2c.rr_grey #rr_c2c_controls,
+#ringroost_c2c.rr_grey #rr_call_icon{
+border: 1px solid #d0d0d0;
+color: #444;
+background-image: -moz-linear-gradient(#ededed, #e1e1e1);
+background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#e1e1e1), to(#ededed));
+background-image: -webkit-linear-gradient(#ededed, #e1e1e1);
+background-image: -o-linear-gradient(#ededed, #e1e1e1);
+text-shadow: 1px 1px 1px #fff;
+background-color: #e1e1e1;
+text-shadow: 0px 1px 1px #fff;
+}
+
+#ringroost_c2c.rr_grey #rr_c2c_controls a{
+color: #444;
+text-shadow: 0px 1px 1px #fff;
+}
+#ringroost_c2c.rr_grey #rr_phone_status{
+border: 1px solid #d0d0d0;
+}
+
+/*black styling */
+#ringroost_c2c.rr_black #rr_c2c_controls,
+#ringroost_c2c.rr_black #rr_call_icon{
+color: #fff;
+border: 1px solid #4d4d4d;
+background-image: -moz-linear-gradient(#656565, #454545);
+background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#454545), to(#656565));
+background-image: -webkit-linear-gradient(#656565, #454545);
+background-image: -o-linear-gradient(#656565, #454545);
+text-shadow: 1px 1px 1px #6d6d6d;
+background-color: #454545;
+
+text-shadow: 0px 1px 1px #000;
+}
+
+#ringroost_c2c.rr_black #rr_phone_status{
+border: 1px solid #4d4d4d;
+}
+
+/*red styling */
+#ringroost_c2c.rr_red #rr_c2c_controls,
+#ringroost_c2c.rr_red #rr_call_icon{
+color: #923c47;
+border: 1px solid #d96d7c;
+background-image: -moz-linear-gradient(#f997b0, #f6677b);
+background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#f6677b), to(#f997b0));
+background-image: -webkit-linear-gradient(#f997b0, #f6677b);
+background-image: -o-linear-gradient(#f997b0, #f6677b);
+text-shadow: 1px 1px 1px #fdbcc7;
+background-color: #f6677b;
+text-shadow: 0px 1px 1px #fff;
+}
+
+#ringroost_c2c.rr_red #rr_c2c_controls a{
+color: #923c47;
+text-shadow: 0px 1px 1px #fff;
+}
+#ringroost_c2c.rr_red #rr_phone_status{
+border: 1px solid #d96d7c;
+}
+
+/*blue styling */
+#ringroost_c2c.rr_blue #rr_c2c_controls,
+#ringroost_c2c.rr_blue #rr_call_icon{
+color: #41788c;
+border: 1px solid #6fb1c7;
+background-image: -moz-linear-gradient(#aae5f7, #73d0f1);
+background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#73d0f1), to(#aae5f7));
+background-image: -webkit-linear-gradient(#aae5f7, #73d0f1);
+background-image: -o-linear-gradient(#aae5f7, #73d0f1);
+text-shadow: 1px 1px 1px #bfeafb;
+background-color: #73d0f1;
+text-shadow: 0px 1px 1px #fff;
+}
+
+#ringroost_c2c.rr_blue #rr_c2c_controls a{
+color: #41788c;
+text-shadow: 0px 1px 1px #fff;
+}
+#ringroost_c2c.rr_blue #rr_phone_status{
+border: 1px solid #6fb1c7;
+}
+
+
+/*green styling */
+#ringroost_c2c.rr_green #rr_c2c_controls,
+#ringroost_c2c.rr_green #rr_call_icon{
+color: #5a742d;
+border: 1px solid #95b959;
+background-image: -moz-linear-gradient(#cae387, #a5cb5e);
+background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#a5cb5e), to(#cae387));
+background-image: -webkit-linear-gradient(#cae387, #a5cb5e);
+background-image: -o-linear-gradient(#cae387, #a5cb5e);
+text-shadow: 1px 1px 1px #dff4bc;
+background-color: #a5cb5e;
+text-shadow: 0px 1px 1px #fff;
+}
+
+#ringroost_c2c.rr_green #rr_c2c_controls a{
+color: #5a742d;
+text-shadow: 0px 1px 1px #fff;
+}
+#ringroost_c2c.rr_green #rr_phone_status{
+border: 1px solid #95b959;
+}
+
+/*yellow styling */
+#ringroost_c2c.rr_yellow #rr_c2c_controls,
+#ringroost_c2c.rr_yellow #rr_call_icon{
+color: #986a39;
+border: 1px solid #e6b650;
+background-image: -moz-linear-gradient(#ffd974, #febf4d);
+background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#febf4d), to(#ffd974));
+background-image: -webkit-linear-gradient(#ffd974, #febf4d);
+background-image: -o-linear-gradient(#ffd974, #febf4d);
+text-shadow: 1px 1px 1px #fbe5ac;
+background-color: #febf4d;
+text-shadow: 0px 1px 1px #fff;
+}
+
+#ringroost_c2c.rr_yellow #rr_c2c_controls a{
+color: #986a39;
+text-shadow: 0px 1px 1px #fff;
+}
+#ringroost_c2c.rr_yellow #rr_phone_status{
+border: 1px solid #e6b650;
+}
+
+/*purple styling */
+#ringroost_c2c.rr_purple #rr_c2c_controls,
+#ringroost_c2c.rr_purple #rr_call_icon{
+color: #7e5d7c;
+border: 1px solid #cd93c6;
+background-image: -moz-linear-gradient(#e9c4e3, #d798d1);
+background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#d798d1), to(#e9c4e3));
+background-image: -webkit-linear-gradient(#e9c4e3, #d798d1);
+background-image: -o-linear-gradient(#e9c4e3, #d798d1);
+text-shadow: 1px 1px 1px #f1ceef;
+background-color: #d798d1;
+text-shadow: 0px 1px 1px #fff;
+}
+
+#ringroost_c2c.rr_purple #rr_c2c_controls a{
+color: #7e5d7c;
+text-shadow: 0px 1px 1px #fff;
+}
+#ringroost_c2c.rr_purple #rr_phone_status{
+border: 1px solid #cd93c6;
+}
+
+/*gblue styling */
+#ringroost_c2c.rr_gblue #rr_c2c_controls,
+#ringroost_c2c.rr_gblue #rr_call_icon{
+color: #57646d;
+border: 1px solid #929ba2;
+background-image: -moz-linear-gradient(#bbcbd8, #8ea5b5);
+background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#8ea5b5), to(#bbcbd8));
+background-image: -webkit-linear-gradient(#bbcbd8, #8ea5b5);
+background-image: -o-linear-gradient(#bbcbd8, #8ea5b5);
+text-shadow: 1px 1px 1px #c6d4df;
+background-color: #8ea5b5;
+text-shadow: 0px 1px 1px #fff;
+}
+
+#ringroost_c2c.rr_gblue #rr_c2c_controls a{
+color: #57646d;
+text-shadow: 0px 1px 1px #fff;
+}
+#ringroost_c2c.rr_gblue #rr_phone_status{
+border: 1px solid #929ba2;
+}
