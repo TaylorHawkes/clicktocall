@@ -1,39 +1,24 @@
-clicktocall
-===========
-
-Website button that allows visitors to call the website owner in there browser. 
-
 <h1>RingRoost ClickToCall</h1>
 
 <p>RingRoost ClickToCall is a html button that allows website visitors to call you directly from their browser. The button can be installed on any website, and is currently compatible with all major browsers (Chrome, Firefox, IE, Safari, Opera). </p>
 
 
-<p>Give it a try:<p>
-
-<div notsupported_text="<a href='tel:17043436748'>Call Us: 704.343.6748 </a>"
-text="Talk To Agent Now" 
-call="17043436748"
-id="ringroost_c2c" 
-class="rr_blue"></div>
-
-
-<p>You can see another working example at:<a href="http://www.ringroost.com/click2call.php"> http://www.ringroost.com/click2call.php</a></p>
+<p>You can see a working example at:<a href="http://www.ringroost.com/click2call.php"> http://www.ringroost.com/click2call.php</a></p>
 
 <h1>Installation </h1>
 
 <h2>Step 1. Include JS/CSS Files in page head</h2>
-<textarea style="width:400px;height:80px;">
+```
 <script src="SIPml-api.js" type="text/javascript"> </script>
 <script src="rr_clicktocall.js" type="text/javascript"> </script>
 <link rel="stylesheet" href="clicktocall.css">
-</textarea>
+```
 
 <h2>Step 2. Add the html div tag with id "ringroost_c2c" </h2>
 Add the following div tag in your html wherever you want the button to show up.
-
-<textarea style="width:800px;height:80px;">
+```
 <div id="ringroost_c2c"  notsupported_text="<a href='tel:17043436748'>Call Us:704.343.6748</a>" text="Call Us" call="17043436748" class="rr_blue"></div>
-</textarea>
+```
 
 <h2>Step 3. Set Required Properties </h2>
 
