@@ -7,13 +7,13 @@
     var viewVideoLocal, viewVideoRemote; // <video> (webrtc) or <div> (webrtc4all)
     var oConfigCall;
     var oReadyStateTimer;
-
     var click_to_call_status;
     var click_to_call;
     var click_to_call_controls;
     var sip_call_id;
 
     C = { divKeyPadWidth: 220 };
+
 
     window.addEventListener("load", ivr_click_to_call_init, false); 
     function ivr_click_to_call_init(){
@@ -37,122 +37,51 @@
         click_to_call = document.getElementById("ringroost_c2c");
         var click_html='<div id="rr_c2c_controls"><a href="#" onclick="ivrDesignerCall();">'+click_to_call.getAttribute("text")+'</a></div><div id="rr_phone_status"></div><span id="rr_call_icon">&#9742;</span>';
         click_html+='<audio style="display:none" id="ivrd_audio_remote" autoplay="autoplay" /></audio>';
-        click_html+='<audio  style="display:none" id="ivrd_dtmfTone" src="http://www.ringroost.com/dtmf.wav" /></audio>';
+        click_html+='<audio  style="display:none" id="ivrd_dtmfTone" src="//www.ringroost.com/dtmf.wav" /></audio>';
         click_to_call.innerHTML = click_html; 
         click_to_call_controls=document.getElementById("rr_c2c_controls");
         txtCallStatus =document.getElementById("rr_phone_status");
     }
 
+    function getChromeVersion () {     
+        var raw = navigator.userAgent.match(/Chrom(e|ium)\/([0-9]+)\./);
+        return raw ? parseInt(raw[2], 10) : false;
+    }
+
     function ivr_postInit() {
-        // check webrtc4all version
-        if (SIPml.isWebRtc4AllSupported() && SIPml.isWebRtc4AllPluginOutdated()) {            
-            if (confirm("Your WebRtc4all extension is outdated ("+SIPml.getWebRtc4AllVersion()+"). A new version with critical bug fix is available. Do you want to install it?\nIMPORTANT: You must restart your browser after the installation.")) {
-                window.location = 'http://code.google.com/p/webrtc4all/downloads/list';
-                return;
-            }
-        }
 
-        // check for WebRTC support
-        if (!SIPml.isWebRtcSupported()) {
-            // is it chrome?
-            if (SIPml.getNavigatorFriendlyName() == 'chrome') {
-                    if (confirm("You're using an old Chrome version or WebRTC is not enabled.\nDo you want to see how to enable WebRTC?")) {
-                        window.location = 'http://www.webrtc.org/running-the-demos';
-                    }
-                    else {
-                        window.location = "index.html";
-                    }
-                    return;
-            }
-                
-            // for now the plugins (WebRTC4all only works on Windows)
-            if (SIPml.getSystemFriendlyName() == 'windows') {
-                // Internet explorer
-                if (SIPml.getNavigatorFriendlyName() == 'ie') {
-                    // Check for IE version 
-                    if (parseFloat(SIPml.getNavigatorVersion()) < 9.0) {
-                        if (confirm("You are using an old IE version. You need at least version 9. Would you like to update IE?")) {
-                            window.location = 'http://windows.microsoft.com/en-us/internet-explorer/products/ie/home';
-                        }
-                        else {
-                            window.location = "index.html";
-                        }
-                    }
+    var is_chrome = navigator.userAgent.indexOf('Chrome') > -1;
+    var is_explorer = (navigator.userAgent.indexOf('MSIE') > -1 || (!!document.documentMode == true ));
+    var is_firefox = navigator.userAgent.indexOf('Firefox') > -1;
+    var is_safari = navigator.userAgent.indexOf("Safari") > -1 ;
+    var is_opera = navigator.userAgent.toLowerCase().indexOf("op") > -1;
+    if ((is_chrome)&&(is_safari)) {is_safari=false;}
+    if ((is_chrome)&&(is_opera)) {is_chrome=false;} 
 
-                    // check for WebRTC4all extension
-                    if (!SIPml.isWebRtc4AllSupported()) {
-                        if (confirm("webrtc4all extension is not installed. Do you want to install it?\nIMPORTANT: You must restart your browser after the installation.")) {
-                            window.location = 'http://code.google.com/p/webrtc4all/downloads/list';
-                        }
-                        else {
-                            // Must do nothing: give the user the chance to accept the extension
-                            // window.location = "index.html";
-                        }
-                    }
-                    // break page loading ('window.location' won't stop JS execution)
-                    if (!SIPml.isWebRtc4AllSupported()) {
-                        return;
-                    }
-                }
-                else if (SIPml.getNavigatorFriendlyName() == "safari" || SIPml.getNavigatorFriendlyName() == "firefox" || SIPml.getNavigatorFriendlyName() == "opera") {
-                    if (confirm("Your browser don't support WebRTC.\nDo you want to install WebRTC4all extension to enjoy audio/video calls?\nIMPORTANT: You must restart your browser after the installation.")) {
-                        window.location = 'http://code.google.com/p/webrtc4all/downloads/list';
-                    }
-                    else {
-                        window.location = "index.html";
-                    }
-                    return;
-                }
-            }
-            // OSX, Unix, Android, iOS...
-            else {
-                if (confirm('WebRTC not supported on your browser.\nDo you want to download a WebRTC-capable browser?')) {
-                    window.location = 'https://www.google.com/intl/en/chrome/browser/';
-                }
-                else {
-                    window.location = "index.html";
-                }
-                return;
-            }
-        }
-
-        // checks for WebSocket support
-        if (!SIPml.isWebSocketSupported() && !SIPml.isWebRtc4AllSupported()) {
-            if (confirm('Your browser don\'t support WebSockets.\nDo you want to download a WebSocket-capable browser?')) {
-                window.location = 'https://www.google.com/intl/en/chrome/browser/';
-            }
-            else {
-                window.location = "index.html";
-            }
+    if(is_chrome){
+        if(getChromeVersion() > 46 && location.protocol === 'http:'){
+            initError();
             return;
-        }
-
+        };
+    }
+    //will they be able to handle this??
+    if (!SIPml.isWebRtcSupported() || !SIPml.isWebSocketSupported() ){
+        initError();
+        return;
+    }
+    //safari && and ie don't currently work
+    if (is_safari || is_explorer){
+        initError();
+        return;
+    }
         // FIXME: displays must be per session
-
-        // attachs video displays
-        if (SIPml.isWebRtc4AllSupported()) {
-            viewVideoLocal = document.getElementById("divVideoLocal");
-            viewVideoRemote = document.getElementById("divVideoRemote");
-            WebRtc4all_SetDisplays(viewVideoLocal, viewVideoRemote); // FIXME: move to SIPml.* API
-        }
-        else{
-            viewVideoLocal = ivr_videoLocal;
-            viewVideoRemote = sip_videoRemote;
-        }
-
-        if (!SIPml.isWebRtc4AllSupported() && !SIPml.isWebRtcSupported()) {
-            if (confirm('Your browser don\'t support WebRTC.\naudio/video calls will be disabled.\nDo you want to download a WebRTC-capable browser?')) {
-                window.location = 'https://www.google.com/intl/en/chrome/browser/';
-            }
-        }
-        
         document.body.style.cursor = 'default';
         oConfigCall = {
             audio_remote: ivr_audioRemote,
-            video_local: viewVideoLocal,
-            video_remote: viewVideoRemote,
-            bandwidth: { audio:undefined, video:undefined },
-            video_size: { minWidth:undefined, minHeight:undefined, maxWidth:undefined, maxHeight:undefined },
+           // video_local: viewVideoLocal,
+           // video_remote: viewVideoRemote,
+            bandwidth: { audio:undefined },
+            //video_size: { minWidth:undefined, minHeight:undefined, maxWidth:undefined, maxHeight:undefined },
             events_listener: { events: '*', listener: onSipEventSession },
             sip_caps: [
                             { name: '+g.oma.sip-im' },
@@ -160,7 +89,7 @@
                             { name: 'language', value: '\"en,fr\"' }
                         ]
         };
-    }
+}
 
 
 function ivrDesignerCall(){
