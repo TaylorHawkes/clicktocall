@@ -191,9 +191,9 @@ function sip_onSipEventStack(e /*SIPml.Stack.Event*/) {
 
             // create SIP stack
             sip_oSipStack = new SIPml.Stack({
-                    realm: 'ivrdesigner.com',
+                    realm: 'ctcproxy.ringroost.com',
                     impi: sip_call_id,
-                    impu: 'sip:clicktocall@ivrdesigner.com',
+                    impu: 'sip:clicktocall@ctcproxy.ringroost.com',
                     password: 'none',
                     display_name: 'ivr_plugin',
                     websocket_proxy_url:'wss://ivrdesigner.com:10062',
