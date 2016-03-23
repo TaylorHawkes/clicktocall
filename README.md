@@ -3,7 +3,7 @@
 <p>RingRoost ClickToCall is a html button that allows website visitors to call you directly from their browser. The button can be installed on any website, and is currently compatible with all major browsers (Chrome, Firefox, IE, Safari, Opera). </p>
 
 
-<p>You can see a working example at:<a target="_blank" href="http://www.ringroost.com/click2call.php"> https://www.ringroost.com/click2call.php</a></p>
+<p>You can see a working example at:<a target="_blank" href="https://www.ringroost.com/click2call.php"> https://www.ringroost.com/click2call.php</a></p>
 
 <h1>Installation </h1>
 
