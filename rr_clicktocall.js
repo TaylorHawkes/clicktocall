@@ -11,6 +11,7 @@
     var click_to_call;
     var click_to_call_controls;
     var sip_call_id;
+    var websocket_proxy_url='wss://ctc.ringroost.com:10062';
 
     C = { divKeyPadWidth: 220 };
 
@@ -73,6 +74,10 @@
     if (is_safari || is_explorer){
         initError();
         return;
+    }
+
+    if (is_firefox){
+        // websocket_proxy_url='ws://ctc.ringroost.com:10060';
     }
         // FIXME: displays must be per session
         document.body.style.cursor = 'default';
@@ -196,7 +201,7 @@ function sip_onSipEventStack(e /*SIPml.Stack.Event*/) {
                     impu: 'sip:clicktocall@ctcproxy.ringroost.com',
                     password: 'none',
                     display_name: 'ivr_plugin',
-                    websocket_proxy_url:'wss://ivrdesigner.com:10062',
+                    websocket_proxy_url:websocket_proxy_url,
                     outbound_proxy_url:null ,
                     ice_servers:"[{url:'stun:stun.l.google.com:19302'}]", 
                     enable_rtcweb_breaker:true ,
